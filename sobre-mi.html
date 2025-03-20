@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/accordion.js"></script>
+    <script defer src="./assets/js/login.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <title>Sobre Mi</title>
+</head>
+<body>
+    <div class="layout">
+        <header class="layout-header">
+
+            <div class="header-logo">
+                <h1 class="logo-text">Foro Coches</h1>
+            </div>
+            <nav class="menu">
+                <ul> 
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-mi.html">Sobre Mi</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+       
+
+        <main class="layout-main">
+
+            <!-- Aqui va el Acordeón -->
+
+            <h2 class="main-title">Sobre mi</h2>
+
+            <div class="main-acordeon">
+
+                <article class="accordion-collapse">
+
+                    <header class="collapse-header">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <p class="collapse-title">¿Quienes Somos?</p>
+                    </header>
+
+                    <div class="collapse-body">
+                        <p class="collapse-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, debitis optio consequuntur cumque assumenda quidem voluptatum quia. Quidem consequatur qui eaque animi quaerat odit, alias eos, laudantium architecto aliquid eligendi.</p>
+
+                    </div>
+
+                </article>
+
+                <article class="accordion-collapse">
+
+                    <header class="collapse-header">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <p class="collapse-title">Nuestros Servicios</p>
+                    </header>
+
+                    <div class="collapse-body">
+                        <p class="collapse-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, debitis optio consequuntur cumque assumenda quidem voluptatum quia. Quidem consequatur qui eaque animi quaerat odit, alias eos, laudantium architecto aliquid eligendi.</p>
+
+                    </div>
+
+                </article>
+
+                <article class="accordion-collapse">
+
+                    <header class="collapse-header">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <p class="collapse-title">¿Que dicen nuestros clientes?</p>
+                    </header>
+
+                    <div class="collapse-body">
+                        <p class="collapse-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, debitis optio consequuntur cumque assumenda quidem voluptatum quia. Quidem consequatur qui eaque animi quaerat odit, alias eos, laudantium architecto aliquid eligendi.</p>
+
+                    </div>
+
+                </article>
+            </div>
+
+        </main>
+
+        <aside class="layout-aside">
+            <header class="aside-header">
+                <div class=" header-container-title">
+                    <h3 class="header-title">
+                        <span class="title-span">¿Quien soy?</span>
+                    </h3>
+
+                    <div class="header-container-img">
+                        <img src="./assets/img/usuarios.png" alt="usuarios">
+                    </div>
+                    
+                    <p class="header-descripcion">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero accusamus adipisci est molestiae fugiat minima beatae quis modi debitis quos nemo, eaque dolorum blanditiis aliquid eius enim corrupti distinctio totam.
+                    </p>
+                </div>
+            </header>
+            <form action="#" class="aside-login">
+                <div class="login-container-title">
+                    <h3 class="login-title">
+                        <span class="title-span">Identificate</span>
+                    </h3>
+                </div>
+    
+                <div class="form-group">
+                    <label for="name" class="login-label">Name: </label>
+                    <input type="text" id="name" class="login-input" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email" class="login-email">Email: </label>
+                    <input type="text" id="email" class="login-input" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="pass" class="login-pass">Password: </label>
+                    <input type="password" id="pass" class="login-input" required>
+                </div>
+    
+                <input type="submit" value="Access" class="login-submit">
+            </form>
+
+            <div class="aside-data aside-data-hide">
+                <p class="data-text">
+                    Bienvenido, <span class="data-name"></span>
+                    <button class="data-logout">Cerrar Sesión</button>
+                </p>
+            </div>
+
+        </aside>
+    </div>
+
+    <footer class="layout-footer">
+        <p class="footer-text">Todos los derechos reservados a Omar Jaouad Benchouikh &copy;</p>
+        <p class="footer-top">Ir arriba</p>
+    </footer>
+
+    <div class="themes">
+        <div class="theme-green"></div>
+        <div class="theme-red"></div>
+        <div class="theme-blue"></div>
+    </div>
+    
+</body>
+</html>

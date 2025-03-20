@@ -1,0 +1,420 @@
+/*ESTILOS GENERALES*/
+
+/*
+
+Me voy a crear variables con los colores para tenerlo
+ordenado con la raiz root
+
+
+*/
+
+:root{
+    --color-primary:#48170C;
+    --backgroundColor-header: white;
+    --colorTitle: #fff;
+    --colorMenu: #333;
+    --colorHover: #EA1D1D;
+    --colorDifuminacion: #b7b4b4;
+    --colorDate: #7a7979;
+    --colorHoverBtn:#59b0e2;
+    --colorCorrecto:#1CEB32;
+    --colorFallido:#EB0500;
+}
+
+html{
+    font-size: 10px; /*establezco el font-size base*/
+}
+
+body{
+    font-size: 1.5rem;
+    font-family:Helvetica,Arial, sans-serif;
+    background-image: url(../img/marcas.jpeg);
+}
+
+.layout{
+    display: grid;
+    grid-template-areas: 
+        "header header" /*el header, slide ocuparan dos columnas mientras que el main y aside una columna*/
+        "slider slider"
+        "main aside"
+    ;
+    grid-template-columns: 70% 30%;
+    max-width: 1280px;
+    margin: 32px auto;
+    padding: 48px;
+    background-color: var(--backgroundColor-header);
+}
+
+.layout-header{
+    grid-area: header;
+}
+
+/*ESTILOS SLIDER*/
+.layout-slider{
+    grid-area: slider;
+    width: 100%;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid var(--colorTitle);
+    box-shadow: 0px 0px 5px var(--colorDifuminacion); /*0px en x, 0px en y y 5px de difuminacion*/
+    margin-bottom: 64px;
+}
+
+/*Estilos a los botones*/
+.slider-btn-prev,
+.slider-btn-next{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 18px;
+    top: calc(50% - 20px);
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorMenu);
+    border-radius: 100%;
+    color: var(--colorTitle);
+    font-size: 16px;
+}
+
+/*asi le digo que empiece por el otro lado*/
+.slider-btn-next{
+    left: auto;
+    right: 8px;
+}
+
+.slides-item{
+    position: absolute;
+    transition: opacity 600ms linear;
+    opacity: 0;
+    width: 100%;
+    
+}
+.slides-img{
+    width: 100%;
+    
+}
+
+/*El slide activo es el que tiene que tener el opacity:1*/
+
+.slides-item-active{
+    opacity: 1;
+    display: block;
+}
+
+
+/*ESTILOS PARA LOS ARTICULOS*/
+.layout-articles,
+.layout-main{
+    grid-area: main;
+    margin: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.article-article{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.article-title{
+    font-size: 48px;
+}
+
+.article-date{
+    color: var(--colorDate);
+}
+
+.article-body{
+    text-align: justify;
+}
+
+.article-btn{
+    width: 120px;
+    padding: 10px 16px;
+    margin-top: 8px;
+    cursor: pointer;
+    background-color: var(--colorMenu);
+    border: none;
+    color: var(--colorTitle);
+    transition: all 300ms linear;
+    text-align: center;
+}
+
+.article-btn:hover{
+    background-color: var(--colorHoverBtn);
+}
+
+/*ESTILOS BARRA LATERAL*/
+
+.layout-aside{
+    grid-area: aside;
+}
+
+.aside-header{
+    margin-bottom: 40px;
+}
+
+.header-container-title{
+    margin-bottom: 24px;
+}
+
+.header-title,
+.login-title{
+    text-align: center;
+    line-height: 16px;
+    background: url(../img/lines.png) repeat-x;
+}
+
+.title-span{
+    /*aplica un backgroundColor white y se corta la linea*/
+    background-color: var(--backgroundColor-header);
+    padding: 8px;
+}
+
+.header-description{
+    font-size: 24px;
+    padding: 8px;
+}
+
+.aside-login{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.login-container-title{
+    margin-bottom: 24px;
+}
+
+.login-form-group{
+    display: flex;
+    gap: 8px;
+}
+
+.login-input{
+    width: 100%;
+    border: 2px solid var(--colorDifuminacion);
+    outline: none;
+    transition: all 300ms linear;
+}
+
+.login-input:focus{
+    border-color: var();
+}
+
+.login-submit{
+    padding: 16px;
+    cursor: pointer;
+    border: 1px solid var(--colorDifuminacion);
+    transition: all 300ms linear;
+}
+
+.login-submit:hover{
+    background-color: var(--colorCorrecto);
+}
+
+/*ESTILOS CABECERA*/
+
+.layout-header{
+    grid-area: header;
+    margin-bottom: 20px;
+}
+
+.header-logo{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px;
+    background-color:var(--color-primary);
+}
+
+.logo-text{
+    color: var(--colorTitle);
+    font-size: 80px;
+    padding: 8px 24px;
+}
+
+/*ESTILOS DEL MENU*/
+.menu{
+    width: 100%;
+    height: 44px;
+    background-color:var(--colorMenu) ;
+    padding: 0 24px;
+}
+
+.menu ul{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.menu ul li a{
+    color: var(--colorTitle);
+    display: flex; /*tengo dos propiedades que funciona con el flex son muy buenas el alig-item para centrar el elemento*/
+    height: 100%;
+    align-items: center;
+    padding: 20px;
+    transition: all 300ms linear;
+    justify-content: center;
+}
+
+.menu ul li a:hover{
+    background-color: var(--colorHover);
+}
+
+/*ESTILOS FOOTER*/
+footer{
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 8px;
+    background-color: var(--colorMenu);
+    color: var(--colorTitle);
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.footer-top{
+    cursor: pointer;
+}
+
+
+.aside-data-hide{
+    display: none;
+}
+.aside-login-hide{
+    display: none;
+}
+
+.data-text{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+/*ESTILOS ACORDEÓN*/
+.main-title{
+    font-size: 30px;
+}
+
+.main-accordion{
+    display: flex;
+    flex-direction: column;
+}
+
+.collapse-header{
+    position: relative;
+    background-color: var(--colorDifuminacion);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--colorDifuminacion);
+    cursor: pointer;
+}
+
+.collapse-header > .fa-solid{
+    position: absolute;
+    font-size: 15px;
+}
+
+.collapse-title{
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.collapse-header > .fa-chevron-down{
+    opacity: 1;
+}
+
+.collapse-header > .fa-chevron-up{
+    opacity: 0;
+}
+
+.collapse-body{
+    max-height: 0;
+    overflow: hidden;
+    border: 1px solid var(--colorDifuminacion);
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0 0 5px 5px;
+    transition: max-height 300ms ease;
+}
+
+.collapse-text{
+    padding: 20px;
+}
+
+.accordion-collapse-open .collapse-body{
+    max-height: 999px;
+    border-bottom: 1px solid var(--colorDifuminacion);
+    transition: max-height 700ms ease-in-out;
+}
+
+.accordion-collapse-open .collapse-header{
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: none;
+    color: var(--colorTitle);
+    background-color: var(--colorHoverBtn);
+    transition: background-color 1000ms ease;
+
+}
+
+.accordion-collapse-open .fa-chevron-down{
+    opacity: 0;
+}
+
+.accordion-collapse-open .fa-chevron-up{
+    opacity: 1;
+}
+
+/*ESTILOS DEL FORMULARIO DE CONTACTO*/
+.main-contact{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-group{
+    width: 100%;
+}
+
+.contact-input,
+.contact-select{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid var(--colorDifuminacion);
+    outline: none;
+    transition: all 300ms linear;
+}
+
+.contact-input:focus,
+.contact-select:focus{   
+    border-color:  var(--colorHoverBtn);   
+}
+
+.contact-btn{
+    padding: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid var(--colorDifuminacion);
+    transition: all 300ms linear;
+}
+
+.contact-btn:hover{
+    background-color: var(--colorHoverBtn);
+    transition: all 300ms linear;
+}
